@@ -37,5 +37,5 @@ data_final_sd <- unlist(lapply(data_final[, (names(data_final) %in% c("Activity"
 library(data.table);
 output <- data.table(data_final);
 data_cleaned <- output[ , lapply( .SD, function(x) mean(x)) , by = "Activity,Subject" ];
-write.csv(data_cleaned,　file="data_final_cleaned.csv", row.names = FALSE);
+write.table(data_cleaned,　file="data_final_cleaned.txt", row.names = FALSE);
 
